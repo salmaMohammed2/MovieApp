@@ -1,0 +1,18 @@
+package com.RoomDatabase
+
+import androidx.room.*
+import com.pojo.ResultX
+
+@Dao
+interface ResultDao {
+    @Query("Select * From MOVIE_TABLE")
+    fun getAllMovies():List<ResultX>
+
+    @Query("Select * From MOVIE_TABLE where title = :name")
+    fun getMovieByName(name: String): List<ResultX>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertMovie(movie: ResultX)
+
+}
+

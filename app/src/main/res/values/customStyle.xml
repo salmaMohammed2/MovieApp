@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+   <style name="Circular">
+       <item name="cornerSize">50%</item>
+       <item name="color">@color/white</item>
+   </style>
+
+    <style name="RoundedSequare">
+        <item name="cornerSize">20%</item>
+        <item name="color">@color/white</item>
+    </style>
+
+    <style name="CornerCut">
+        <item name="cornerSize">15dp</item>
+        <item name="cornerFamily">cut</item>
+        <item name="color">@color/white</item>
+    </style>
+
+    <style name="DiamondCut">
+        <item name="cornerSize">75dp</item>
+        <item name="cornerFamily">cut</item>
+        <item name="color">@color/white</item>
+    </style>
+
+    <style name="SpecificCorenerCut">
+        <item name="cornerSizeTopRight">75dp</item>
+        <item name="cornerFamilyTopRight">cut</item>
+        <item name="color">@color/white</item>
+        <item name="cornerSizeBottomLeft">75dp</item>
+        <item name="cornerFamilyBottomLeft">cut</item>
+    </style>
+
+    <style name="SpecificCorenerRounded">
+        <item name="cornerSizeTopRight">75dp</item>
+        <item name="cornerFamilyTopRight">rounded</item>
+        <item name="color">@color/white</item>
+        <item name="cornerSizeBottomLeft">75dp</item>
+        <item name="cornerFamilyBottomLeft">rounded</item>
+    </style>
+
+    <style name="roundRectangular" parent="">
+        <item name="cornerSize">5dp</item>
+        <item name="cornerFamily">rounded</item>
+        <item name="color">@color/white</item>
+        <item name="colorBackgroundFloating">@color/white</item>
+        <item name="colorAccent">@color/white</item>
+        <item name="colorOnPrimary">@color/white</item>
+    </style>
+
+
+</resources>

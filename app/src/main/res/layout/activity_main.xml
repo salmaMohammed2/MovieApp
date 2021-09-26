@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#181530"
+    tools:context="com.ui.main.MainActivity">
+
+
+    <TextView
+        android:id="@+id/movies"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/search"
+        app:layout_constraintBottom_toTopOf="@id/tab_layout"
+        android:layout_marginLeft="15sp"
+        android:text="MOVIES"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColor="#D5D7DD"
+
+        />
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="220sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/movies"
+        android:background="@drawable/custom_search"
+        app:layout_constraintBottom_toTopOf="@id/tab_layout"
+        android:layout_marginTop="15sp"
+        android:padding="10sp"
+        android:drawableLeft="@drawable/ic_search_24"
+        android:textColor="#181530"
+        android:layout_marginLeft="10sp"
+        android:layout_marginRight="15sp"
+        />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#181530"
+        app:layout_constraintTop_toBottomOf="@id/search"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tabTextColor="#D5D7DD"
+        android.text.InputFilter.AllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/nowplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Now Playing"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/toprated"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Top Rated"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/favorites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="My Favorites"/>
+    </com.google.android.material.tabs.TabLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/myRec1"
+        android:layout_width="match_parent"
+        android:layout_height="550sp"
+        android:layout_marginTop="5sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab_layout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_bias="0.06"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

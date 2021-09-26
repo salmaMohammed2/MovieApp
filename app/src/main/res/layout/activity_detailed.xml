@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#181530"
+    tools:context="com.ui.main.DetailedActivity">
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/posterDetailed"
+        android:layout_width="390sp"
+        android:layout_height="450sp"
+        android:scaleType="center"
+        android:layout_marginTop="130sp"
+        app:layout_constraintBottom_toTopOf="@id/itemMain"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/itemMain"
+        android:layout_width="match_parent"
+        android:layout_height="250sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/custom_item"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"
+        app:layout_constraintVertical_bias="0.7"
+        />
+
+    <TextView
+        android:id="@+id/movieTitle2"
+        android:layout_width="320sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/itemMain"
+        app:layout_constraintStart_toStartOf="@id/itemMain"
+        app:layout_constraintEnd_toEndOf="@id/overView"
+        app:layout_constraintBottom_toTopOf="@id/movieAvg2"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="5sp"
+        android:layout_marginLeft="15sp"
+        android:paddingRight="30sp"
+        android:textColor="#D5D7DD"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/movieAvg2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/movieTitle2"
+        app:layout_constraintStart_toStartOf="@id/itemMain"
+        android:layout_marginTop="5sp"
+        android:layout_marginLeft="15sp"
+        android:textStyle="bold"
+        android:textColor="#f3d60d"
+        android:textSize="14sp"
+        android:textAlignment="gravity"
+        android:gravity="center"
+        android:drawableLeft="@drawable/ic_star_rate_24"
+        />
+
+    <TextView
+        android:id="@+id/movieCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/movieAvg2"
+        app:layout_constraintStart_toStartOf="@id/itemMain"
+        android:layout_marginTop="5sp"
+        android:layout_marginLeft="15sp"
+        android:textColor="#D5D7DD"
+        />
+
+    <TextView
+        android:id="@+id/overView"
+        android:layout_width="280sp"
+        android:layout_height="100sp"
+        app:layout_constraintTop_toBottomOf="@id/movieCount"
+        app:layout_constraintStart_toStartOf="@id/itemMain"
+        app:layout_constraintEnd_toEndOf="@id/itemMain"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="15sp"
+        android:layout_marginLeft="15sp"
+        android:layout_marginBottom="30sp"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/itemMain"
+        android:textColor="#4C4B6A"
+        />
+
+    <TextView
+        android:id="@+id/genres"
+        android:layout_width="match_parent"
+        android:layout_height="50sp"
+        app:layout_constraintTop_toBottomOf="@id/itemMain"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/custom_item"
+        android:paddingLeft="15sp"
+        android:textSize="15sp"
+        android:gravity="left"
+        android:textAlignment="gravity"
+        android:textColor="#4C4B6A"
+        android:layout_marginTop="15sp"
+        android:layout_marginLeft="30sp"
+        android:layout_marginRight="30sp"
+
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
