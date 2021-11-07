@@ -10,8 +10,10 @@ import com.example.movieapp.R
 import androidx.lifecycle.Observer
 import com.pojo.IMAGE_PATH
 import com.pojo.mySingletone
+import dagger.hilt.android.AndroidEntryPoint
 
 
+@AndroidEntryPoint
 class DetailedActivity : AppCompatActivity() {
 
 

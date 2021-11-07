@@ -6,13 +6,13 @@ import com.pojo.ResultX
 @Dao
 interface ResultDao {
     @Query("Select * From MOVIE_TABLE")
-    fun getAllMovies():List<ResultX>
+    suspend fun getAllMovies():List<ResultX>
 
     @Query("Select * From MOVIE_TABLE where title = :name")
-    fun getMovieByName(name: String): List<ResultX>
+    suspend fun getMovieByName(name: String): List<ResultX>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertMovie(movie: ResultX)
+    suspend fun insertMovie(movie: ResultX)
 
 }
 

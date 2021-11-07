@@ -17,11 +17,14 @@ import com.google.android.material.tabs.TabLayout
 
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
 import com.pojo.*
+import dagger.hilt.android.AndroidEntryPoint
+import kotlin.properties.Delegates
 
-
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
 
     lateinit var movieViewModel: MovieViewModel
+
     var checkPosition=-1;
     lateinit var recycler:RecyclerView
     val searchList : MutableList<ResultX> = arrayListOf()
@@ -29,7 +32,8 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        movieViewModel= ViewModelProvider(this@MainActivity).get(MovieViewModel::class.java)
+       // movieViewModel= ViewModelProvider(this,ViewModelProvider.AndroidViewModelFactory.getInstance(this.application)).get(MovieViewModel::class.java)
+        movieViewModel= ViewModelProvider(this)[MovieViewModel::class.java]
         movieViewModel.getNowPlayingNow()
         mutableLiveDataMovie(movieViewModel)
         recycler = findViewById<RecyclerView>(R.id.myRec1)

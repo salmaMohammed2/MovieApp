@@ -10,7 +10,7 @@ import com.pojo.myConverters
 abstract class AppDatabase : RoomDatabase() {
    abstract fun getMovieDao() : ResultDao
 
-   companion object {
+/*   companion object {
        @Volatile private var INSTANCE: AppDatabase? = null
 
        fun getInstance(context: Context): AppDatabase =
@@ -24,7 +24,7 @@ abstract class AppDatabase : RoomDatabase() {
                .allowMainThreadQueries()
                .fallbackToDestructiveMigration()
                .build()
-   }
+   }*/
 
 
 }

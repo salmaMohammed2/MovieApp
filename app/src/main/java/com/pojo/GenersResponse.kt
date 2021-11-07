@@ -1,5 +1,5 @@
 package com.pojo
 
-data class Geners(
+data class GenersResponse(
     val genres: List<Genre>
 )
