@@ -108,9 +108,13 @@ class MovieViewModel @Inject constructor(private val repository: MovieRepository
     }
 
     fun inserFavorites(movie: ResultX){
-        viewModelScope.launch {
+/*        viewModelScope.launch {
             repository.insertMovie(movie)
-        }
+        }*/
+
+        Thread(Runnable {
+            repository.insertMovie(movie)
+        }).start()
 
     }
 

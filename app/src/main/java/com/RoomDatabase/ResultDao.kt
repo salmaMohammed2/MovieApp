@@ -12,7 +12,7 @@ interface ResultDao {
     suspend fun getMovieByName(name: String): List<ResultX>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertMovie(movie: ResultX)
+    fun insertMovie(movie: ResultX)
 
 }
 

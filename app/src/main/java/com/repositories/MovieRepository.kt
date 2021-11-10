@@ -30,7 +30,7 @@ class MovieRepository @Inject constructor(private val moviesServices: MoviesServ
         return resultDao.getAllMovies()
     }
 
-    suspend fun insertMovie(movie: ResultX) {
+     fun insertMovie(movie: ResultX) {
         resultDao.insertMovie(movie)
     }
 
