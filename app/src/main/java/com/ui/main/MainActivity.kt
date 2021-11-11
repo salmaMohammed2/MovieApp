@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.ViewGroup
 import android.widget.*
 import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Observer
@@ -16,6 +17,10 @@ import com.google.android.material.tabs.TabLayout
 
 
 import com.google.android.material.tabs.TabLayout.OnTabSelectedListener
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.analytics.ktx.analytics
+import com.google.firebase.analytics.ktx.logEvent
+import com.google.firebase.ktx.Firebase
 import com.pojo.*
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.properties.Delegates
@@ -24,6 +29,7 @@ import kotlin.properties.Delegates
 class MainActivity : AppCompatActivity() {
 
     lateinit var movieViewModel: MovieViewModel
+    private lateinit var firebaseAnalytics: FirebaseAnalytics
 
     var checkPosition=-1;
     lateinit var recycler:RecyclerView
@@ -32,7 +38,24 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        firebaseAnalytics = Firebase.analytics
        // movieViewModel= ViewModelProvider(this,ViewModelProvider.AndroidViewModelFactory.getInstance(this.application)).get(MovieViewModel::class.java)
+
+
+/*        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_ITEM) {
+            param(FirebaseAnalytics.Param.ITEM_ID, id)
+            param(FirebaseAnalytics.Param.ITEM_NAME, name)
+            param(FirebaseAnalytics.Param.CONTENT_TYPE, "image")
+        }*/
+/*
+
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
+            param(FirebaseAnalytics.Param.SCREEN_NAME, MainActivity)
+            param(FirebaseAnalytics.Param.SCREEN_CLASS, "MainActivity")
+        }
+*/
+
+
         movieViewModel= ViewModelProvider(this)[MovieViewModel::class.java]
         movieViewModel.getNowPlayingNow()
         mutableLiveDataMovie(movieViewModel)
@@ -50,11 +73,19 @@ class MainActivity : AppCompatActivity() {
                     1 -> {
                         checkPosition=tab.position
                         passAdapter(tab.position)
+                        firebaseAnalytics.logEvent("roll"){
+                            param("movie","${tab.position}")
+
+                        }
                     }
 
                     2 -> {
                         checkPosition=tab.position
                         passAdapter(tab.position)
+     /*                   throw RuntimeException("Test Crash") // Force a crash
+                        addContentView(guiTabs,ViewGroup.LayoutParams(
+                            ViewGroup.LayoutParams.MATCH_PARENT,
+                            ViewGroup.LayoutParams.WRAP_CONTENT))*/
                     }
                 }
             }

@@ -78,7 +78,7 @@ class MovieViewModel @Inject constructor(private val repository: MovieRepository
                 val movieResponse: Response<GenersResponse> = repository.getGener()
                 if(movieResponse.isSuccessful){
                     withContext(Dispatchers.Main){
-                        movieMutableLiveData.value= movieResponse.body()?.genres as MutableList<ResultX>
+                        GenersMutableLiveData.value= movieResponse.body()?.genres as MutableList<Genre>
                     }
 
                 }

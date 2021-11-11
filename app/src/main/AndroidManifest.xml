@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.movieapp">
     <uses-permission android:name="android.permission.INTERNET" />
+    <meta-data android:name="google_analytics_automatic_screen_reporting_enabled" android:value="false" />
     <application
         android:name="com.ui.main.MainApplication"
         android:allowBackup="true"
